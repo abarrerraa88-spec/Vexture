@@ -1,0 +1,131 @@
+:root {
+  color-scheme: dark;
+  --bg: #090a0f;
+  --panel: #131524;
+  --accent: #ff3b93;
+  --accent-2: #4be0ff;
+  --text: #f7f8fb;
+  --muted: #aab0d2;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, system-ui, sans-serif;
+  background: radial-gradient(circle at top right, #1d1f34, var(--bg));
+  color: var(--text);
+  min-height: 100vh;
+  padding: 2rem;
+}
+
+.hero {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+}
+
+.hero h1 {
+  margin: 0 0 0.4rem;
+}
+
+.eyebrow {
+  color: var(--accent-2);
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
+  margin-bottom: 0.5rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+}
+
+.panel {
+  background: linear-gradient(180deg, #191b31, var(--panel));
+  border: 1px solid #272a44;
+  border-radius: 16px;
+  padding: 1rem;
+}
+
+.panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.stack {
+  display: grid;
+  gap: 0.6rem;
+  margin-top: 1rem;
+}
+
+input,
+select,
+button {
+  border-radius: 10px;
+  border: 1px solid #343754;
+  background: #111223;
+  color: var(--text);
+  padding: 0.65rem 0.8rem;
+}
+
+button.primary {
+  background: linear-gradient(135deg, var(--accent), #bf3dff);
+  border: none;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.list {
+  list-style: none;
+  margin: 1rem 0 0;
+  padding: 0;
+  display: grid;
+  gap: 0.6rem;
+}
+
+.list li,
+.card {
+  border: 1px solid #353a64;
+  background: #111429;
+  border-radius: 12px;
+  padding: 0.7rem;
+}
+
+.meta {
+  color: var(--muted);
+  margin: 0.3rem 0 0;
+  font-size: 0.9rem;
+}
+
+.badge {
+  font-size: 0.8rem;
+  color: #131524;
+  background: var(--accent-2);
+  border-radius: 999px;
+  padding: 0.25rem 0.6rem;
+  font-weight: 700;
+}
+
+.cards {
+  margin-top: 1rem;
+  display: grid;
+  gap: 0.6rem;
+}
+
+@media (max-width: 640px) {
+  body {
+    padding: 1rem;
+  }
+
+  .hero {
+    flex-direction: column;
+  }
+}

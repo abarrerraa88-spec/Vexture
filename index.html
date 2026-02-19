@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vexture TikTok Command Center</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <div>
+        <p class="eyebrow">Built for your creator workflow</p>
+        <h1>TikTok Command Center</h1>
+        <p>
+          Manage multiple TikTok accounts in one organized workspace. Plan content,
+          track growth, and keep your posting system tight.
+        </p>
+      </div>
+      <button id="addAccountBtn" class="primary">+ Add account</button>
+    </header>
+
+    <main class="grid">
+      <section class="panel">
+        <div class="panel-header">
+          <h2>Accounts</h2>
+          <span id="accountCount" class="badge">0 accounts</span>
+        </div>
+        <form id="accountForm" class="stack">
+          <input id="accountName" type="text" placeholder="Account name" required />
+          <input id="niche" type="text" placeholder="Niche (fashion, gaming...)" required />
+          <button class="primary" type="submit">Save account</button>
+        </form>
+        <ul id="accountsList" class="list"></ul>
+      </section>
+
+      <section class="panel">
+        <div class="panel-header">
+          <h2>Content Planner</h2>
+        </div>
+        <form id="postForm" class="stack">
+          <select id="postAccount" required>
+            <option value="">Choose account</option>
+          </select>
+          <input id="postIdea" type="text" placeholder="Post idea / hook" required />
+          <input id="postDate" type="date" required />
+          <button class="primary" type="submit">Schedule</button>
+        </form>
+        <ul id="postsList" class="list"></ul>
+      </section>
+
+      <section class="panel">
+        <div class="panel-header">
+          <h2>Growth Tracker</h2>
+        </div>
+        <form id="growthForm" class="stack">
+          <select id="growthAccount" required>
+            <option value="">Choose account</option>
+          </select>
+          <input id="followers" type="number" min="0" placeholder="Followers" required />
+          <input id="avgViews" type="number" min="0" placeholder="Average views" required />
+          <button class="primary" type="submit">Update metrics</button>
+        </form>
+        <div id="growthCards" class="cards"></div>
+      </section>
+    </main>
+
+    <template id="accountTemplate">
+      <li>
+        <strong class="name"></strong>
+        <p class="meta"></p>
+      </li>
+    </template>
+
+    <template id="postTemplate">
+      <li>
+        <strong class="name"></strong>
+        <p class="meta"></p>
+      </li>
+    </template>
+
+    <script src="app.js"></script>
+  </body>
+</html>
