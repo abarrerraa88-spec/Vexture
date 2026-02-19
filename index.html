@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vexture TikTok Command Center</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <div>
+        <p class="eyebrow">Built for your creator workflow</p>
+        <h1>TikTok Command Center</h1>
+        <p>
+          One dashboard for your TikTok system: accounts, post planning, and growth tracking.
+        </p>
+      </div>
+      <div class="hero-actions">
+        <button id="addAccountBtn" class="primary">+ Add account</button>
+        <button id="logoutBtn" class="ghost" hidden>Log out</button>
+      </div>
+    </header>
+
+    <section id="authPanel" class="panel auth-panel" aria-live="polite">
+      <h2>Private Access</h2>
+      <p class="meta">Create a passcode once. It's stored only in your browser.</p>
+      <form id="authForm" class="stack auth-grid">
+        <input id="authPasscode" type="password" placeholder="Passcode" required minlength="4" />
+        <button class="primary" type="submit" id="authSubmit">Unlock</button>
+      </form>
+    </section>
+
+    <main id="appMain" class="grid" hidden>
+      <section class="panel">
+        <div class="panel-header">
+          <h2>Accounts</h2>
+          <span id="accountCount" class="badge">0 accounts</span>
+        </div>
+        <form id="accountForm" class="stack">
+          <input id="accountName" type="text" placeholder="Account name" required />
+          <input id="niche" type="text" placeholder="Niche (fashion, gaming...)" required />
+          <button class="primary" type="submit">Save account</button>
+        </form>
+        <ul id="accountsList" class="list"></ul>
+      </section>
+
+      <section class="panel">
+        <div class="panel-header">
+          <h2>Content Planner</h2>
+        </div>
+        <form id="postForm" class="stack">
+          <select id="postAccount" required>
+            <option value="">Choose account</option>
+          </select>
+          <input id="postIdea" type="text" placeholder="Post idea / hook" required />
+          <input id="postDate" type="date" required />
+          <button class="primary" type="submit">Schedule</button>
+        </form>
+        <ul id="postsList" class="list"></ul>
+      </section>
+
+      <section class="panel">
+        <div class="panel-header">
+          <h2>Growth Tracker</h2>
+        </div>
+        <form id="growthForm" class="stack">
+          <select id="growthAccount" required>
+            <option value="">Choose account</option>
+          </select>
+          <input id="followers" type="number" min="0" placeholder="Followers" required />
+          <input id="avgViews" type="number" min="0" placeholder="Average views" required />
+          <button class="primary" type="submit">Update metrics</button>
+        </form>
+        <div id="growthCards" class="cards"></div>
+      </section>
+
+      <section class="panel span-3">
+        <div class="panel-header">
+          <h2>Backups</h2>
+        </div>
+        <p class="meta">Export your data to move it between devices, then import it back any time.</p>
+        <div class="actions-row">
+          <button id="exportBtn" class="primary" type="button">Export JSON</button>
+          <label class="ghost file-label">
+            Import JSON
+            <input id="importInput" type="file" accept="application/json" hidden />
+          </label>
+        </div>
+        <p id="statusMessage" class="meta"></p>
+      </section>
+    </main>
+
+    <template id="accountTemplate">
+      <li>
+        <strong class="name"></strong>
+        <p class="meta"></p>
+      </li>
+    </template>
+
+    <template id="postTemplate">
+      <li>
+        <strong class="name"></strong>
+        <p class="meta"></p>
+      </li>
+    </template>
+
+    <script src="app.js"></script>
+  </body>
+</html>
