@@ -12,14 +12,25 @@
         <p class="eyebrow">Built for your creator workflow</p>
         <h1>TikTok Command Center</h1>
         <p>
-          Manage multiple TikTok accounts in one organized workspace. Plan content,
-          track growth, and keep your posting system tight.
+          One dashboard for your TikTok system: accounts, post planning, and growth tracking.
         </p>
       </div>
-      <button id="addAccountBtn" class="primary">+ Add account</button>
+      <div class="hero-actions">
+        <button id="addAccountBtn" class="primary">+ Add account</button>
+        <button id="logoutBtn" class="ghost" hidden>Log out</button>
+      </div>
     </header>
 
-    <main class="grid">
+    <section id="authPanel" class="panel auth-panel" aria-live="polite">
+      <h2>Private Access</h2>
+      <p class="meta">Create a passcode once. It's stored only in your browser.</p>
+      <form id="authForm" class="stack auth-grid">
+        <input id="authPasscode" type="password" placeholder="Passcode" required minlength="4" />
+        <button class="primary" type="submit" id="authSubmit">Unlock</button>
+      </form>
+    </section>
+
+    <main id="appMain" class="grid" hidden>
       <section class="panel">
         <div class="panel-header">
           <h2>Accounts</h2>
@@ -61,6 +72,21 @@
           <button class="primary" type="submit">Update metrics</button>
         </form>
         <div id="growthCards" class="cards"></div>
+      </section>
+
+      <section class="panel span-3">
+        <div class="panel-header">
+          <h2>Backups</h2>
+        </div>
+        <p class="meta">Export your data to move it between devices, then import it back any time.</p>
+        <div class="actions-row">
+          <button id="exportBtn" class="primary" type="button">Export JSON</button>
+          <label class="ghost file-label">
+            Import JSON
+            <input id="importInput" type="file" accept="application/json" hidden />
+          </label>
+        </div>
+        <p id="statusMessage" class="meta"></p>
       </section>
     </main>
 
